@@ -1,0 +1,2 @@
+PROJECT(webcrawler)
+ADD_SUBDIRECTORY(main)
