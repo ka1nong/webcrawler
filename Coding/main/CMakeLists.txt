@@ -8,6 +8,10 @@ SET(
 	../imageParse/imageParse.cpp
 	../bookParse/bookParse.h
 	../bookParse/bookParse.cpp
+	../download/downloadControl.h
+	../download/downloadControl.cpp
+	../allocFile/fileControl.h
+	../allocFile/fileControl.cpp
        )
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})

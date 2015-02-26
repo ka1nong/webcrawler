@@ -3,6 +3,7 @@
 
 #include "../parseControl/parseBase.h"
 
+class DwCtrl;
 class BookParse : public ParseBase
 {
 public:
@@ -10,6 +11,9 @@ public:
         ~BookParse();
         virtual bool Parse();
         virtual  std::string DescriptionSelf();
+
+private:
+        DwCtrl* pDwCtrl;
 
 private:
         static BookParse * s_instance;
