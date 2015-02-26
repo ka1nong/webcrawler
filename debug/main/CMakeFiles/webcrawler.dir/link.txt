@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/webcrawler.dir/main.cpp.o CMakeFiles/webcrawler.dir/__/parseControl/parseCtrl.cpp.o CMakeFiles/webcrawler.dir/__/parseControl/parseBase.cpp.o CMakeFiles/webcrawler.dir/__/imageParse/imageParse.cpp.o CMakeFiles/webcrawler.dir/__/bookParse/bookParse.cpp.o  -o ../webcrawler -rdynamic 

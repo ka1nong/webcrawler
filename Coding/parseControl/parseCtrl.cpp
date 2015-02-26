@@ -1,4 +1,5 @@
-#include "ParseCtrl"
+#include "parseCtrl.h"
+#include <cstddef>
 
 ParseCtrl* ParseCtrl::s_instance = NULL;
 
@@ -20,11 +21,11 @@ ParseCtrl::ParseCtrl(const ParseCtrl& rhs)
 
 ParseCtrl::~ParseCtrl()
 {
-        for (auto iter = m_parses.begin();
+        for (iterator iter = m_parses.begin();
                 iter != m_parses.end();
                 iter++)
         {
-                delete *iter;
+                delete (*iter);
         }
 }
 
@@ -35,7 +36,7 @@ ParseCtrl::~ParseCtrl()
 
 void ParseCtrl::Detach(ParseBase* parse)
 {
-        for (auto iter = m_parses.begin();
+        for (iterator iter = m_parses.begin();
                 iter != m_parses.end();
                 iter++)
         {
@@ -46,12 +47,26 @@ void ParseCtrl::Detach(ParseBase* parse)
         }
 }
 
-iterator ParseCtrl::Begin()
+ParseCtrl::iterator ParseCtrl::Begin()
 {
         m_parses.begin();
 }
 
-iterator ParseCtrl::End()
+ParseCtrl::iterator ParseCtrl::End()
 {
         m_parses.end();
+}
+
+ParseCtrl::iterator ParseCtrl::at(size_t index)
+{
+        size_t i = 0;
+        for (iterator iter = m_parses.begin();
+                iter != m_parses.end();
+                iter++, i++)
+        {
+                if (i == index)
+                        return iter;
+        }
+
+        return m_parses.end();
 }

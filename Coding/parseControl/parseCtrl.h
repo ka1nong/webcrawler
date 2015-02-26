@@ -2,18 +2,20 @@
 #define _PARSE_CTRL_H
 
 #include <vector>
+#include <stddef.h>
 
 class ParseBase;
 
 class ParseCtrl
 {
 public:
-        typedef std::vector::iterator ParseCtrl::iterator;
+        typedef std::vector<ParseBase*>::iterator iterator;
         static ParseCtrl* GetInstance();
         void  Attach(ParseBase* parse);
         void Detach(ParseBase* parse);
         iterator Begin();
         iterator End();
+        iterator at(size_t index);
 
 private:
         ParseCtrl();

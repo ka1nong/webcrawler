@@ -1,15 +1,19 @@
 #ifndef  _PARSE_BASE_H_
 #define _PARSE_BASE_H_
-
-class ParseCtrl ;
+#include <string>
 
 class ParseBase
 {
 public:
-        ParseBase(ParseCtrl*  pCtrl);
+        ParseBase();
         virtual ~ParseBase();
-        virtual Init() = 0;
-        virtual Parse() = 0;
+        virtual bool Init(const std::string& res,  const std::string& savePath) ;
+        virtual bool Parse() = 0;
+        virtual  std::string DescriptionSelf() = 0;
+
+protected:
+        std::string m_resStr;
+        std::string m_savePath;
 };
 
 #endif 
